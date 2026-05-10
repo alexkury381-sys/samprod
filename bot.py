@@ -10,7 +10,7 @@ from telegram.request import HTTPXRequest
 from telegram.error import TelegramError, TimedOut
 
 # ===== НАСТРОЙКИ =====
-TELEGRAM_TOKEN = "7195445922:AAEhzdYH4khKUCbc6y0AGGYIfV8sYcNCkmQ"  # ЗАМЕНИТЕ НА НОВЫЙ ТОКЕН!
+TELEGRAM_TOKEN = "7195445922:AAEhzdYH4GYIfV8sYcNCkmQ"  # ЗАМЕНИТЕ НА НОВЫЙ ТОКЕН!
 CHAT_ID = "-1001273424864"
 
 RSS_FEEDS = [
