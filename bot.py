@@ -104,7 +104,7 @@ async def check_rss_health(feed_url):
 async def check_all_rss_health():
     """Проверяет все RSS-ленты и выводит красивый отчёт"""
     print(f"\n{'='*60}")
-    print(f"🔍 ПРОВЕРКА RSS-ИСТОЧНИКОВ [{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
+    print(f"🔍 CHECKING RSS SOURCES [{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}]")
     print(f"{'='*60}")
     
     results = []
@@ -126,8 +126,8 @@ async def check_all_rss_health():
         # Форматируем вывод
         print(f"{status_icon} [{status_text}] {source_name}")
         print(f"   📍 URL: {feed_url}")
-        print(f"   📊 Код ответа: {status_code if status_code else 'N/A'}")
-        print(f"   💬 Сообщение: {message}")
+        print(f"   📊 Status_code: {status_code if status_code else 'N/A'}")
+        print(f"   💬 Message: {message}")
         print(f"   {'-'*50}")
         
         results.append({
@@ -140,10 +140,10 @@ async def check_all_rss_health():
     # Сводка
     working = sum(1 for r in results if r['status'])
     total = len(results)
-    print(f"\n📊 СВОДКА: {working}/{total} источников работают")
+    print(f"\n📊 SUMMARY: {working}/{total} sources are working")
     
     if working < total:
-        print(f"⚠️  НЕРАБОТАЮЩИЕ ИСТОЧНИКИ:")
+        print(f"⚠️  BROKEN SOURCES:")
         for r in results:
             if not r['status']:
                 print(f"   - {r['source']}: {r['message']}")
